@@ -1,0 +1,28 @@
+FROM mhart/alpine-node
+
+ADD .babelrc
+ADD config.js
+ADD src/
+ADD package.json
+
+RUN npm install && npm build
+
+ENV VERBOSE 0
+
+ENV APS_APP_ID myAppId
+ENV APS_APP_NAME myAppName
+ENV APS_MASTER_KEY myMasterKey
+ENV APS_DATABASE_URI mongodb://localhost:27017/parse
+ENV APS_COLLECTION_PREFIX APS
+ENV APS_PUBLIC_SERVER_URL https://localhost:1337
+ENV APS_MAX_UPLOAD_SIZE 20mb
+ENV APS_PORT 1337
+ENV APS_SERVER_URL http://localhost:1337
+ENV APS_ALLOW_CLIENT_CLASS_CREATION true
+ENV APS_ENABLE_ANONYMOUS_USERS true
+ENV APS_VERIFY_USER_EMAILS true
+
+EXPOSE 1337
+
+CMD ["npm", "start"]
+
