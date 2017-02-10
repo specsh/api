@@ -1,9 +1,13 @@
 FROM mhart/alpine-node
 
-ADD .babelrc
-ADD config.js
-ADD src/
-ADD package.json
+RUN mkdir -p /app
+
+COPY .babelrc /app/
+COPY config.js /app/
+COPY src/ /app/
+COPY package.json /app/
+
+WORKDIR /app
 
 RUN npm install && npm build
 
