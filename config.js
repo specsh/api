@@ -9,7 +9,7 @@ module.exports = {
 
   databaseURI: 'mongodb://localhost:27017/parse',
 
-  collectionPrefix: 'APS',
+  collectionPrefix: 'SPECSH',
 
   publicServerURL: 'http://localhost:1337',
 

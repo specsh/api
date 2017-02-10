@@ -7,7 +7,7 @@ import http from 'http'
 
 const app = express()
 
-objenv(config, {prefix: 'APS', camelCase: true}, (key, value) => {
+objenv(config, {prefix: 'SPECSH', camelCase: true}, (key, value) => {
   console.log('%s %s', key, value)
 })
 
