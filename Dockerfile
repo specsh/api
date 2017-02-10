@@ -2,10 +2,7 @@ FROM mhart/alpine-node
 
 RUN mkdir -p /app
 
-COPY .babelrc /app/
-COPY config.js /app/
-COPY src/ /app/
-COPY package.json /app/
+COPY . /app/
 
 WORKDIR /app
 
